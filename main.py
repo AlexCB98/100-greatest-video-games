@@ -16,4 +16,6 @@ for game in games:
     if title and title[0].isdigit():
         game_titles.append(title)
 
+game_titles = game_titles[::-1]
+
 print(game_titles)
