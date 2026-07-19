@@ -10,6 +10,10 @@ games = soup.select('h2')
 game_titles = []
 
 for game in games:
-    game_titles.append(game.get_text())
+
+    title = game.get_text(strip=True)
+
+    if title and title[0].isdigit():
+        game_titles.append(title)
 
 print(game_titles)
