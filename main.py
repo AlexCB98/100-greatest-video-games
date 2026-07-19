@@ -5,3 +5,10 @@ response = requests.get(url="https://www.gq-magazine.co.uk/article/best-video-ga
 web_page = response.text
 
 soup = BeautifulSoup(web_page, 'html.parser')
+
+games = soup.select('h2')
+
+print(len(games))
+
+for game in games:
+    print(game.get_text())
